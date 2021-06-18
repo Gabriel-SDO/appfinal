@@ -78,7 +78,6 @@ const routes: Routes = [
   {
     path: 'content',
     loadChildren: () => import('./page/content/content.module').then( m => m.ContentPageModule),
-    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
   // Página de contatos

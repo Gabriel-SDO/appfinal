@@ -1,6 +1,7 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="tertiary">
     <ion-title>Entrar / Login</ion-title>
+    <img src="../../../assets/logo.png" alt="logo" style="width:70px;" slot="start">
   </ion-toolbar>
 </ion-header>
 
@@ -12,7 +13,7 @@
 
   <p>Logue-se usando uma conta do Google (Gmail, Youtube, etc.) para usar os recursos do aplicativo.</p>
 
-  <ion-button expand="block" (click)="login()">
+  <ion-button expand="block" (click)="login()" color="tertiary">
     <ion-icon name="logo-google" slot="start"></ion-icon>
     Entrar com o Google
   </ion-button>
