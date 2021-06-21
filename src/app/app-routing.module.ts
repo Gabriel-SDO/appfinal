@@ -102,12 +102,27 @@ const routes: Routes = [
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
+  {
+    path: 'new',
+    loadChildren: () => import('./page/new/new.module').then( m => m.NewPageModule)
+  },
+  {
+    path: 'projetos',
+    loadChildren: () => import('./page/meus-proj/meus-proj.module').then( m => m.MeusProjPageModule)
+  },
+  {
+    path: 'delete/:id',
+    loadChildren: () => import('./page/delete/delete.module').then( m => m.DeletePageModule)
+  },
+
   // Rota curinga (Erro 404)
   // DEVE SER SEMPRE A ÚLTIMA ROTA
   {
     path: '**',
     loadChildren: () => import('./page/e404/e404.module').then( m => m.E404PageModule)
   }
+
+
 ];
 
 @NgModule({
