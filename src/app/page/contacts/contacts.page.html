@@ -1,9 +1,79 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>contacts</ion-title>
+  <ion-toolbar color="tertiary">
+    
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Faça Contato </ion-title>
+    <img src="../../../assets/logo.png" alt="logo" style="width:70px;" slot="start">
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding-horizontal">
 
-</ion-content>
+  <p>Preencha os campos abaixo para entrar em contato com a nossa equipe de atendimento.</p>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="contactSend()">
+  
+      <ion-list lines="full" class="ion-no-margin">
+  
+        <ion-item>
+          <ion-label position="floating" color="primary">
+            Nome:
+  
+            <ion-text color="danger" *ngIf="contactForm.controls.name.errors">
+              <small *ngIf="contactForm.controls.name.errors.required">* Obrigatório</small>
+              <small *ngIf="contactForm.controls.name.errors.minlength">* Inválido</small>
+            </ion-text>
+  
+          </ion-label>
+          <ion-input type="text" name="name" id="name" formControlName="name"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating" color="primary">
+            E-mail:
+  
+            <ion-text color="danger" *ngIf="contactForm.controls.email.errors">
+              <small *ngIf="contactForm.controls.email.errors.required">* Obrigatório</small>
+              <small *ngIf="contactForm.controls.email.errors.email">* Inválido</small>
+            </ion-text>
+  
+          </ion-label>
+          <ion-input type="text" name="email" id="email" formControlName="email"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label position="floating" color="primary">
+            Assunto:
+  
+            <ion-text color="danger" *ngIf="contactForm.controls.subject.errors">
+              <small *ngIf="contactForm.controls.subject.errors.required">* Obrigatório</small>
+              <small *ngIf="contactForm.controls.subject.errors.minlength">* Inválido</small>
+            </ion-text>
+  
+          </ion-label>
+          <ion-input type="text" name="subject" id="subject" formControlName="subject"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating" color="primary">
+            Mensagem:
+  
+            <ion-text color="danger" *ngIf="contactForm.controls.message.errors">
+              <small *ngIf="contactForm.controls.message.errors.required">* Obrigatório</small>
+              <small *ngIf="contactForm.controls.message.errors.minlength">* Inválido</small>
+            </ion-text>
+  
+          </ion-label>
+          <ion-textarea name="message" autoGrow="true" id="message" formControlName="message"></ion-textarea>
+        </ion-item>
+  
+      </ion-list>
+  
+      <ion-button type="submit"  color="tertiary" expand="block" class="ion-margin-vertical" [disabled]="contactForm.invalid">Enviar
+      </ion-button>
+  
+    </form>
+  
+  </ion-content>

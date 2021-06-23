@@ -1,10 +1,10 @@
 <ion-app>
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Cadastro</ion-list-header>
-          <ion-note>Dos melhores, o pior!</ion-note>
+      <ion-content color="tertiary">
+        <ion-list  id="inbox-list">
+          <ion-list-header>S4 Investimentos</ion-list-header>
+          <ion-note>O seu lugar de investir, é aqui!</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
