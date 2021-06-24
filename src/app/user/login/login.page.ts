@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
                 this.feedback(
                   data.user.displayName,
                   'Você já pode acessar o conteúdo restrito.',
-                  '/content'
+                  '/content/0'
                 );
               } else {
                 this.feedback(

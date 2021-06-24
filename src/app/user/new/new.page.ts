@@ -51,7 +51,7 @@ export class NewPage implements OnInit {
 
               // Se tem perfil
               if (uData.exists) {
-                this.router.navigate(['/content']);
+                this.router.navigate(['/content/0']);
               }
             });
         }
@@ -179,7 +179,7 @@ export class NewPage implements OnInit {
           this.profileForm.reset();
 
           // Redireciona para conteúdo
-          this.router.navigate(['/content']);
+          this.router.navigate(['/content/0']);
         }
       }]
     });
