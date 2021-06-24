@@ -49,41 +49,29 @@ export class NewPage implements OnInit {
     public form: FormBuilder,
     public auth: AngularFireAuth
   ) {
-    
 
-  // Obtém dados do usuário logado
-  this.auth.onAuthStateChanged(
-    (userData) => {
+    // Obtém todas as categorias
+    this.http.get(
+      this.apiURL
+      + `categorias`)
+      .subscribe(
+        (res: any) => {
 
-      // if(userData.uid !== 'u4vjof96IZVT1q2VnEgGSGJH0Xj2') this.router.navigate(['/home']);
-
-    });
-
-            // Obtém todas as categorias
-            this.http.get(
-              this.apiURL
-              + `categorias`)
-              .subscribe(
-                (res: any) => {
-      
-                  // Prepara dados para a view (HTML)
-                  this.cat = res;
-                }
-              );
+          // Prepara dados para a view (HTML)
+          this.cat = res;
+        }
+      );
 
 
     this.auth.onAuthStateChanged(
       (uData) => {
+        if (!uData.uid) this.router.navigate(['/home']);
         this.newForm.controls.uid.setValue(uData.uid);
       }
     );
 
     // Cria os campos do formulário
     this.newFormCreate();
-
-    
-
-
   }
 
   ngOnInit() { }
@@ -93,7 +81,7 @@ export class NewPage implements OnInit {
 
     this.newForm = this.form.group({
 
- 
+
       // Status do contato (status)
       status: ['true'],
 
@@ -113,7 +101,7 @@ export class NewPage implements OnInit {
         Validators.compose([        // Valida o campo
           Validators.required,      // Campo é obrigatório
           Validators.minLength(3),  // Deve ter pelo menos 3 caracteres
-          removeSpaces    
+          removeSpaces
         ])
       ],
 
@@ -128,16 +116,16 @@ export class NewPage implements OnInit {
         ])
       ],
 
-     categoria: [''],
+      categoria: [''],
 
-     // email do projeto(email)
-     email: [                    // Nome do campo
-      '',                         // Valor inicial do campo
-      Validators.compose([        // Valida o campo
-        Validators.required,      // Campo é obrigatório
-        Validators.minLength(3),  // Deve ter pelo menos 3 caracteres
-        removeSpaces    
-      ])
+      // email do projeto(email)
+      email: [                    // Nome do campo
+        '',                         // Valor inicial do campo
+        Validators.compose([        // Valida o campo
+          Validators.required,      // Campo é obrigatório
+          Validators.minLength(3),  // Deve ter pelo menos 3 caracteres
+          removeSpaces
+        ])
       ],
 
       // Telegone do projeto(tel)
@@ -146,7 +134,7 @@ export class NewPage implements OnInit {
         Validators.compose([        // Valida o campo
           Validators.required,      // Campo é obrigatório
           Validators.minLength(3),  // Deve ter pelo menos 3 caracteres
-          removeSpaces    
+          removeSpaces
         ])
       ],
 
@@ -186,7 +174,7 @@ export class NewPage implements OnInit {
             this.newForm.reset();
 
             // Retorna para a home
-            this.router.navigate(['/content']);
+            this.router.navigate(['/content/0']);
           }
         }
       ]

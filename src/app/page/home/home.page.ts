@@ -13,7 +13,8 @@ export class HomePage implements OnInit {
     public navCtrl : NavController) { }
 
   ngOnInit() {
-    this.menuCtrl.enable(false);
+    // this.menuCtrl.enable(true);
+    // this.menuCtrl.enable(false);
   }
 
   logar(){
@@ -21,6 +22,6 @@ export class HomePage implements OnInit {
   }
 
   entrar(){
-    this.navCtrl.navigateRoot('/content');
+    this.navCtrl.navigateRoot('/content/0');
   }
 }

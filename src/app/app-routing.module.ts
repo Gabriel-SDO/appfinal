@@ -14,7 +14,7 @@ import {
 const toLogin = () => redirectUnauthorizedTo(['/home']);
 
 // Usuário está logado? Vai para a página de conteúdo.
-const isLogged = () => redirectLoggedInTo(['/content']);
+const isLogged = () => redirectLoggedInTo(['/content/0']);
 
 const routes: Routes = [
 
@@ -76,7 +76,7 @@ const routes: Routes = [
   // Página principal da aplicação
   // Só acessível se usuário está logado
   {
-    path: 'content',
+    path: 'content/:cat',
     loadChildren: () => import('./page/content/content.module').then( m => m.ContentPageModule),
   },
 
@@ -104,15 +104,18 @@ const routes: Routes = [
 
   {
     path: 'new',
-    loadChildren: () => import('./page/new/new.module').then( m => m.NewPageModule)
+    loadChildren: () => import('./page/new/new.module').then( m => m.NewPageModule),
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
   {
     path: 'projetos',
-    loadChildren: () => import('./page/meus-proj/meus-proj.module').then( m => m.MeusProjPageModule)
+    loadChildren: () => import('./page/meus-proj/meus-proj.module').then( m => m.MeusProjPageModule),
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
   {
     path: 'delete/:id',
-    loadChildren: () => import('./page/delete/delete.module').then( m => m.DeletePageModule)
+    loadChildren: () => import('./page/delete/delete.module').then( m => m.DeletePageModule),
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
 
   // Rota curinga (Erro 404)

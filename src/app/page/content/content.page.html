@@ -27,7 +27,7 @@
 
           <ion-item>
           <ion-label>Selecione a categoria desejada:</ion-label>
-          <ion-select value="brown" okText="Ok" cancelText="Cancelar">
+          <ion-select value="brown" okText="Ok" cancelText="Cancelar" (ionChange)="changeCat($event)">
             <ion-select-option *ngFor="let cdata of cat" value="{{cdata.id}}">{{cdata.nome}}</ion-select-option>
           </ion-select>
           </ion-item>

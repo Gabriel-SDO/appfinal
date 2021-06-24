@@ -2,29 +2,40 @@
   "projetos": [
     {
       "status": "true",
-      "title": "iPhone 11 Apple (64GB) Preto Tela 6,1\" 4G Câmera 12MP iOS",
-      "slogan": "images-americanas.b2w.io",
-      "description": "Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla. Tire fotos incríveis com pouca luz usando o modo Noite. Veja cores fiéis em fotos, vídeos e jogos na tela. Liquid Retina de 6,1 po",
-      "email": "projetofinaç3@gmail.com",
-      "tel": "(xx)xxxxx-xxxx",
+      "title": "Teste de projeto",
+      "slogan": "vencer vencer",
+      "description": "Teste testando",
+      "categoria": "3",
+      "email": "xu@gmail.com",
+      "tel": "21994529233",
       "uid": "xSeXwkmMx4ZlJadYQZEw7g03DnO2",
-      "id": 1,
-      "categoria": "Saúde"
+      "id": 4
     },
     {
       "status": "true",
-      "title": "Teste",
-      "slogan": "trestasdo teste",
-      "description": "vapo vapo",
-      "categoria": "Comércios",
-      "email": "teste@gmail.com",
-      "tel": "21994529999",
-      "uid": "vbgd57DcTeMSQoaNcobKcBSzeIt1",
-      "id": 2
+      "title": "Projeto 1",
+      "slogan": "projeto projeto",
+      "description": "fafafafafaf",
+      "categoria": "2",
+      "email": "da@gmail.com",
+      "tel": "219945292",
+      "uid": "xSeXwkmMx4ZlJadYQZEw7g03DnO2",
+      "id": 5
+    },
+    {
+      "status": "true",
+      "title": "Projeto 2",
+      "slogan": "projeto projeto",
+      "description": "fafafafafaf",
+      "categoria": "2",
+      "email": "da@gmail.com",
+      "tel": "219945292",
+      "uid": "xSeXwkmMx4ZlJadYQZEw7g03DnO2",
+      "id": 5
     }
   ],
   "categorias": [
-    { 
+    {
       "nome": "Saúde",
       "id": "1"
     },
@@ -48,6 +59,5 @@
       "nome": "Confeitaria",
       "id": "6"
     }
-  
   ]
 }
